@@ -4,9 +4,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
 	<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/immersive-slider.css">
+	<link rel="stylesheet" type="text/css" href="../css/immersive-slider.css">
 </head>
 <body id="Teleport">
 	<div class="header">
@@ -16,8 +16,12 @@
 		<div class="header_buttons">
 			<a href="#about_us">О нас</a>
 			<a href="#news">Новости</a>
-			<a href="#register_modal">Регистрация</a>
-			<a href="#login_modal">Логин</a>
+			<svg width="40" height="46" viewBox="0 0 40 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M20 23C26.3125 23 31.4286 17.852 31.4286 11.5C31.4286 5.14805 26.3125 0 20 0C13.6875 0 8.57143 5.14805 8.57143 11.5C8.57143 17.852 13.6875 23 20 23ZM28 25.875H26.5089C24.5268 26.7914 22.3214 27.3125 20 27.3125C17.6786 27.3125 15.4821 26.7914 13.4911 25.875H12C5.375 25.875 0 31.2836 0 37.95V41.6875C0 44.0684 1.91964 46 4.28571 46H35.7143C38.0804 46 40 44.0684 40 41.6875V37.95C40 31.2836 34.625 25.875 28 25.875Z" fill="white" class="header_svg" onclick="profile()" />
+			</svg>
+			<svg width="44" height="34" viewBox="0 0 44 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M42.7109 18.4608L28.2734 32.8983C26.9844 34.1874 24.75 33.285 24.75 31.4374V23.1874H13.0625C11.9195 23.1874 11 22.2678 11 21.1249V12.8749C11 11.7319 11.9195 10.8124 13.0625 10.8124H24.75V2.56237C24.75 0.723312 26.9758 -0.187625 28.2734 1.10144L42.7109 15.5389C43.5102 16.3467 43.5102 17.653 42.7109 18.4608ZM16.5 32.4686V29.0311C16.5 28.4639 16.0359 27.9999 15.4688 27.9999H8.25C6.72891 27.9999 5.5 26.771 5.5 25.2499V8.74987C5.5 7.22878 6.72891 5.99987 8.25 5.99987H15.4688C16.0359 5.99987 16.5 5.53581 16.5 4.96862V1.53112C16.5 0.963937 16.0359 0.499875 15.4688 0.499875H8.25C3.69531 0.499875 0 4.19519 0 8.74987V25.2499C0 29.8046 3.69531 33.4999 8.25 33.4999H15.4688C16.0359 33.4999 16.5 33.0358 16.5 32.4686Z" fill="white" class="header_svg" onclick="exit()"/>
+			</svg>
 		</div>
 	</div>
 	<div id="register_modal" class="modalDialog">
@@ -96,17 +100,17 @@
 	<div class="container">
 		<div class="rate_list">
 			<h2>Teleport - электронная система хранения портфолио учащихся. </h2>
-			<img src="assets/landing_photo_1.jpeg">
+			<img src="../assets/landing_photo_1.jpeg">
 			<div id="about_us"></div>
 			<h2>О нас:</h2>
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper malesuada proin libero nunc consequat interdum varius. Mi bibendum neque egestas congue quisque. Tincidunt dui ut ornare lectus sit amet est placerat. Ultricies leo integer malesuada nunc vel risus. Eget felis eget nunc lobortis mattis aliquam. Auctor augue mauris augue neque. Tortor aliquam nulla facilisi cras fermentum odio eu. Tellus orci ac auctor augue mauris augue neque. Turpis egestas integer eget aliquet nibh praesent tristique magna. Sed adipiscing diam donec adipiscing tristique. Sit amet consectetur adipiscing elit ut. Mattis nunc sed blandit libero.
 			</p>
-			<img src="assets/landing_photo_2.jpeg">
+			<img src="../assets/landing_photo_2.jpeg">
 			<p>
 				Bibendum at varius vel pharetra vel turpis. Dolor magna eget est lorem. Aliquet lectus proin nibh nisl condimentum id. Senectus et netus et malesuada fames ac turpis egestas sed. Dui accumsan sit amet nulla facilisi morbi tempus iaculis urna. Orci ac auctor augue mauris augue neque gravida in. Fermentum iaculis eu non diam phasellus vestibulum. Lorem ipsum dolor sit amet consectetur. In hendrerit gravida rutrum quisque non tellus orci ac. Lectus magna fringilla urna porttitor rhoncus dolor purus non enim. Nec sagittis aliquam malesuada bibendum arcu. Facilisis volutpat est velit egestas. Id volutpat lacus laoreet non curabitur gravida arcu ac. Pellentesque sit amet porttitor eget dolor.
 			</p>
-			<img src="assets/landing_photo_3.jpeg">
+			<img src="../assets/landing_photo_3.jpeg">
 			<div id="news"></div>
 			<h2>Новости:</h2>
 			<div class="main">
@@ -149,16 +153,16 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery.immersive-slider.js"></script>
+	<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.immersive-slider.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			var tkn = localStorage.getItem("token");
-			if(tkn){
-				location.href = "http://localhost/portfolio/personal/person.html";
+			if(!tkn){
+				location.href = "http://localhost/portfolio/index.html";
 			}
 		})
 	</script>  
-	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="../js/main.js"></script>
 </body>
 </html>
