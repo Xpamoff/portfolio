@@ -1,0 +1,130 @@
+.select > input
+{
+  display: none;
+}
+.items > input
+{
+  display: none;
+}
+#text
+{
+  position: absolute;
+  display: block;
+  top: 0;
+  padding-left: 10px;
+}
+.select
+{
+  display: inline-block;
+  width: 160px;
+  height: 34px;
+  line-height: 30px;
+  position: relative;
+  border-radius: 10px;
+}
+.select:before
+{
+  content: ">";
+  display: inline-block;
+  background: #ffffff00;
+  position: absolute;
+  right: 0px;
+  top: 5px;
+  z-index: 2;
+  width: 30px;
+  height: 26px;
+  text-align: center;
+  line-height: 26px;
+  border: none;
+  transform: rotate(90deg);
+  cursor: pointer;
+}
+.select input[name="list"]:not(:checked) ~ #text
+{
+  color: black;
+  background: white;
+}
+.select input[name="list"]:checked ~ #text
+{
+  background: transparent;
+  color: transparent;
+  z-index: 2;
+}
+#select:disabled ~ .items #text
+{
+  background: #eee;
+}
+.items
+{
+  display: block;
+  min-height: 30px;
+  position: absolute;
+  border: 2px solid #E5E5E5;;
+  overflow: hidden;
+  width: 160px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+#select:not(:checked) ~ .items
+{
+  height: 30px;
+}
+.items label
+{
+  border-top: 2px solid #E5E5E5;
+  display: none;
+  padding-left: 10px;
+  background: white;
+  transition: 0.5s;
+}
+.items label:hover
+{
+  background: #E5E5E5;
+  cursor: pointer;
+}
+#select:checked ~ .items
+{
+  padding-top: 30px;
+}
+#select:checked ~ .items label
+{
+  display: block;
+}
+.items input:checked + label
+{
+  display: block!important;
+  border: none;
+  background: white;
+}
+#select:checked ~ .bg
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  background: rgba(0,0,0,0.4);
+}
+.settings_button{
+  display: inline-block;
+  background-color: white;
+  width: 160px;
+  height: 34px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid #E5E5E5;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  margin-top: 35px;
+  margin-bottom: 10px;
+  transition: 0.5s;
+}
+.settings_button:hover{
+  background-color: #E5E5E5;
+}
+#file{
+  border: 2px solid #E5E5E5;
+}

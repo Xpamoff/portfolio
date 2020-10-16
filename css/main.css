@@ -307,3 +307,33 @@ a{
 .header_svg{
 	cursor: pointer;
 }
+.settings_back{
+	width: 350px;
+	height: 250px;
+	background-color: #fff;
+	border-radius: 20px;
+	color: #46353F;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.settings_back > a{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 30px;
+	line-height: 80px;
+	color: #46353F;
+}
+.h2-modal{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 30px;
+	line-height: 30px;
+	color: #46353F;
+	text-align: center;
+	margin: 35px;
+	margin-top: 10px;
+}
