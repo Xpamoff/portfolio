@@ -61,7 +61,13 @@ class Register extends Controller
                 ], 422);
             }
             else {
-                Teacher::query()->insert($request->all());
+                Teacher::query()->insert(['school_number'=>$request->get('school_number'),
+                    'first_name'=>$request->get('first_name'),
+                    'last_name'=>$request->get('last_name'),
+                    'middle_name'=>$request->get('middle_name'),
+                    'email'=>$request->get('email'),
+                    'position'=>$request->get('position'),
+                    'password'=>$request->get('password')]);
                 return response(null, 204);
             }
         }
