@@ -304,3 +304,6 @@ a{
 	display: flex;
 	flex-direction: row;
 }
+.header_svg{
+	cursor: pointer;
+}

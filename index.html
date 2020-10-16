@@ -32,6 +32,19 @@
 			</div>
 		</div>
 	</div>
+	<div id="login_modal" class="modalDialog">
+		<div class="register_container" class="modal_container">
+			<div class="text" id="register_name">Я:</div>
+			<div class="register_buttons">
+				<div>
+					<a href="#login_teacher_modal">Учитель</a>
+				</div>
+				<div>
+					<a href="#login_student_modal">Ученик</a>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div id="register_teacher_modal" class="modalDialog">
 		<div class="register_teacher_container" class="modal_container">
 			<div class="text" id="register_name">Регистрация:</div>
@@ -61,12 +74,22 @@
 			<div class="response"></div>
 		</div>
 	</div>
-	<div id="login_modal" class="modalDialog">
+	<div id="login_teacher_modal" class="modalDialog">
 		<div class="login_container" class="modal_container">
 			<div class="text" id="register_name">Вход:</div>
-			<input type="email" name="email" placeholder="Электронная почта*" required="">
-			<input type="password" name="password" placeholder="Пароль*" required="">
-			<input type="button" name="button" value="Войти" id="reg_button">
+			<input type="email" name="email" placeholder="Электронная почта*" required="" id="email_t_log">
+			<input type="password" name="password" placeholder="Пароль*" required="" id="password_t_log">
+			<input type="button" name="button" value="Войти" id="reg_button" onclick="login_teacher()">
+			<div class="response"></div>
+		</div>
+	</div>
+	<div id="login_student_modal" class="modalDialog">
+		<div class="login_container" class="modal_container">
+			<div class="text" id="register_name">Вход:</div>
+			<input type="email" name="email" placeholder="Электронная почта*" required="" id="email_stud_log">
+			<input type="password" name="password" placeholder="Пароль*" required="" id="password_stud_log">
+			<input type="button" name="button" value="Войти" id="reg_button" onclick="login_student()">
+			<div class="response"></div>
 		</div>
 	</div>
 	<div class="container">
@@ -91,7 +114,7 @@
 	<div class="down-side">
 		<div class="h2-downside">Teleport</div>
 		<div class="h2-downside">
-			<p>Карта сайта:</p>
+			<p id="map_site">Карта сайта:</p>
 			<div class="text-downside">
 				<a href="#Teleport">Главная</a>
 				<a href="#about_us">О нас</a>
@@ -112,6 +135,14 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var tkn = localStorage.getItem("token");
+			if(tkn){
+				location.href = "http://localhost/portfolio/personal/person.html";
+			}
+		})
+	</script>  
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
