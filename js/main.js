@@ -18,7 +18,7 @@ $(document).ready(function() {
 	// });
 
 		var settings = {
-	  "url": "api/public/api/getTeachers",
+	  "url": "../api/public/api/getTeachers",
 	  "method": "POST",
 	  "timeout": 0,
 	  "headers": {
