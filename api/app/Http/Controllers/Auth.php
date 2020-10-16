@@ -31,7 +31,6 @@ class Auth extends Controller
                 $token = Hash::make(Str::random(32));
                 $isAuthed = Student::query()->where('email', $request->get('email'))
                     ->where('password', $request->get('password'))->count();
-                var_dump($isAuthed);
                 if(!$isAuthed) {
                     return response([
                         'error' => [
