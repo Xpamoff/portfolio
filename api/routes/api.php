@@ -17,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::post('/register', [\App\Http\Controllers\Register::class, 'register']);
 Route::post('/auth', [\App\Http\Controllers\Auth::class, 'auth']);
 Route::post('/exit', [\App\Http\Controllers\ExitFromOffce::class, 'exit'])->middleware('token');
+Route::post('/getUserData', [\App\Http\Controllers\User::class, 'getData'])->middleware('token');
+Route::post('/getTeachers', [\App\Http\Controllers\Applicaton::class, 'getTeachers'])->middleware('token');
