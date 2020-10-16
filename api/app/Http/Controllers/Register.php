@@ -17,7 +17,7 @@ class Register extends Controller
                 'school_number'=>'required',
                 'first_name'=>'required',
                 'last_name'=>'required',
-                'email'=>'required|email',
+                'email'=>'required|email|unique:student,email',
                 'birth_date'=>'required|date',
                 'class'=>'required',
                 'password'=>'required'
@@ -48,7 +48,7 @@ class Register extends Controller
                 'school_number'=>'required',
                 'first_name'=>'required',
                 'last_name'=>'required',
-                'email'=>'required|email',
+                'email'=>'required|email|unique:teacher,email',
                 'password'=>'required'
             ]);
             if($validation->fails()) {
