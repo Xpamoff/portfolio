@@ -2,6 +2,11 @@ body{
 	background-color: #E1D6C3;
 	display: flex;
 	flex-direction: column;
+	padding: 0;
+	margin: 0;
+}
+a{
+	text-decoration: none;
 }
 .header{
 	position: fixed;
@@ -38,9 +43,6 @@ body{
 	justify-content: space-between;
 }
 .header_buttons > a{
-	
-}
-a{
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 	font-style: normal;
 	font-weight: 300;
@@ -221,4 +223,61 @@ p{
 #news{
 	position: absolute;
 	margin-top: -100px;
+}
+#rotate_back{
+	text-align: center;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 30px;
+	color: #46353F;
+	line-height: 0px;
+	margin-right: 200px;
+	margin-left: 200px;
+	text-decoration: underline;
+}
+.down-side{
+	padding: 0;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: row;
+}
+.h2-downside{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 40px;
+	line-height: 47px;
+	height: 100%;
+	width: 20%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 20px;
+}
+.text-downside{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 30px;
+	line-height: 32px;
+	color: #46353F;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	text-decoration: none;
+	flex-direction: column;
+}
+.text-downside > a{
+	text-decoration: none;
+	cursor: pointer;
+	color: #46353F;
+}
+a{
+	color: #fff;
 }
