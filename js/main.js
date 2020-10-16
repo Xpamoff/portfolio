@@ -145,6 +145,34 @@ function login_student(){
 }
 
 function exit(){
+	var form = new FormData();
+	var settings = {
+	  "url": "api/public/api/exit",
+	  "method": "POST",
+	  "timeout": 0,
+	  "headers": {
+	    "Authorization": "Bearer " + localStorage.getItem("token")
+	  },
+	  "processData": false,
+	  "mimeType": "multipart/form-data",
+	  "contentType": false,
+	  "data": form
+	};
+	
+	$.ajax(settings).done(function (response) {
+	  console.log(response);
+	});
+
 	localStorage.removeItem('token');
-	location.href = "localhost/";
+	location.href = "http://localhost/";
+}
+
+function settings(){
+	location.href = "http://localhost/portfolio/personal/person.html#settings";
+}
+function change_teacher(){
+	location.href = "http://localhost/portfolio/personal/person.html";
+}
+function add_award(){
+	location.href = "http://localhost/portfolio/personal/person.html";
 }
