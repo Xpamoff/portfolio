@@ -13,7 +13,6 @@ class Applicaton extends Controller
         $token = $request->bearerToken();
         $data = Student::query()->where(['token' => $token])->select('school_number')->get();
         $teachers = Teacher::query()->where(['school_number' => $data[0]['school_number']]);
-        var_dump($teachers->count());
         if ($teachers->count()) {
             return response([
                 'data' => $teachers->get()
