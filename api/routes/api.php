@@ -19,3 +19,5 @@ Route::post('/auth', [\App\Http\Controllers\Auth::class, 'auth']);
 Route::post('/exit', [\App\Http\Controllers\ExitFromOffce::class, 'exit'])->middleware('token');
 Route::post('/getUserData', [\App\Http\Controllers\User::class, 'getData'])->middleware('token');
 Route::post('/getTeachers', [\App\Http\Controllers\Applicaton::class, 'getTeachers'])->middleware('token');
+Route::post('/sendRequest', [\App\Http\Controllers\Applicaton::class, 'send'])->middleware('token');
+Route::post('/getRequests', [\App\Http\Controllers\Applicaton::class, 'getRequests'])->middleware('token');

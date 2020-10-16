@@ -11,7 +11,7 @@ class Request extends Model
 
     protected $table = 'request';
     protected $fillable = [
-        'teacher_id', 'student_id'
+        'teacher_id', 'student_id', 'student_first_name', 'student_last_name', 'student_middle_name', 'student_class'
     ];
     public $timestamps = false;
 }
