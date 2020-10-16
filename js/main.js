@@ -6,6 +6,44 @@ $(document).ready(function() {
 			location.href = "#close";
 		}
 	})
+
+		// $("#immersive_slider").immersive_slider({
+	  // animation: "bounce", // As usual, you can change the animation to these: slide (default), bounce, fade, slideUp, and bounceUp
+	  // slideSelector: ".slide", // This option will let you assign custom selector for each slides in case .slide is already taken
+	  // container: ".main", // This option lets you define the container of which the background will appear. Make sure the slider is inside this container as well.
+	  // cssBlur: false, // Experimental: In case you don't want to keep adding new data-blurred attributes, trigger this to true and it will generate the blur image on the fly (more info below).
+	  // pagination: true, // Toggle this to false if you don't want a pagination
+	  // loop: true, // Toggle to false if you don't want the slider to loop. Default is true.
+	  // autoStart: 10000 // Define the number of milliseconds before it navigates automatically. Change this to 0 or false to disable autoStart. The default value is 5000.
+	// });
+
+		var settings = {
+	  "url": "api/public/api/getTeachers",
+	  "method": "POST",
+	  "timeout": 0,
+	  "headers": {
+	    "Application": "Bearer " + localStorage.getItem("token")
+	    },
+	  statusCode: {
+			200: function(response){
+				console.log(response);
+				for(var i = 0;i < response.data.length;i++){
+					var first = $('<input type="radio" name="list" value="first_value" id="list[' + i + ']">');
+					var second = $('<label for="list[' + i + '] ">Мария Ивановна</label>');
+					$('.items').append(first);
+					$('.items').append(second);
+				}
+			},
+			404: function(response){
+				
+			}
+		}
+	};
+
+
+	$.ajax(settings).done(function (response) {
+	  console.log(response);
+	});
 })
 
 function register_student() {
@@ -174,5 +212,8 @@ function change_teacher(){
 	location.href = "http://localhost/portfolio/personal/person.html";
 }
 function add_award(){
+	location.href = "http://localhost/portfolio/personal/person.html";
+}
+function profile(){
 	location.href = "http://localhost/portfolio/personal/person.html";
 }
