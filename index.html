@@ -35,14 +35,15 @@
 	<div id="register_teacher_modal" class="modalDialog">
 		<div class="register_teacher_container" class="modal_container">
 			<div class="text" id="register_name">Регистрация:</div>
-			<input type="text" name="firstname" placeholder="Имя*" required="">
-			<input type="text" name="surname" placeholder="Фамилия*" required="">
-			<input type="text" name="pastname" placeholder="Отчество">
-			<input type="text" name="school_teacher" placeholder="Школа*" required="">
-			<input type="text" name="job" placeholder="Должность">
-			<input type="email" name="email" placeholder="Электронная почта*" required="">
-			<input type="password" name="password" placeholder="Пароль*" required="">
-			<input type="button" name="button" value="Зарегистрироваться" id="reg_button">
+			<input type="text" name="firstname" placeholder="Имя*" required="" id="firstname_t">
+			<input type="text" name="surname" placeholder="Фамилия*" required="" id="surname_t">
+			<input type="text" name="pastname" placeholder="Отчество" id="pastname_t">
+			<input type="text" name="school_teacher" placeholder="Школа*" required="" id="school_t">
+			<input type="text" name="job" placeholder="Должность" id="job_t">
+			<input type="email" name="email" placeholder="Электронная почта*" required="" id="email_t">
+			<input type="password" name="password" placeholder="Пароль*" required="" id="password_t">
+			<input type="button" name="button" value="Зарегистрироваться" id="reg_button" onclick="register_teacher()">
+			<div class="response"></div>
 		</div>
 	</div>
 	<div id="register_student_modal" class="modalDialog">
@@ -57,6 +58,7 @@
 			<input type="email" name="email" placeholder="Электронная почта*" required="" id="email_stud">
 			<input type="password" name="password" placeholder="Пароль*" required="" id="password_stud">
 			<input type="button" name="button" value="Зарегистрироваться" id="reg_button" onclick="register_student()">
+			<div class="response"></div>
 		</div>
 	</div>
 	<div id="login_modal" class="modalDialog">

@@ -207,7 +207,7 @@ img{
 .rate_list{
 	text-align: center;
 }
-p{
+.rate_list > p{
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 	font-style: normal;
 	font-weight: 300;
@@ -259,6 +259,7 @@ p{
 	align-items: center;
 	justify-content: center;
 	margin: 20px;
+	text-align: center;
 }
 .text-downside{
 	font-family: 'Yanone Kaffeesatz', sans-serif;
@@ -280,4 +281,26 @@ p{
 }
 a{
 	color: #fff;
+}
+.response{
+	height: 40px;
+	width: 80%;
+	border-radius: 5px;
+	border: none;
+	display: none;
+	padding-left: 5px;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 20px;
+	text-align: left;
+	color: gray;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+#map_site{
+	display: flex;
+	flex-direction: row;
 }
