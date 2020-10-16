@@ -1,0 +1,224 @@
+body{
+	background-color: #E1D6C3;
+	display: flex;
+	flex-direction: column;
+}
+.header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100px;
+	background-color: #46353F;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+}
+
+.header_logo{
+	margin-left: 5%;
+}
+.logo{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 40px;
+	line-height: 47px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	color: #FFFFFF;
+}
+.header_buttons{
+	position: fixed;
+	right: 5%;
+	display: flex;
+	width: 600px;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.header_buttons > a{
+	
+}
+a{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 40px;
+	line-height: 47px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	color: #FFFFFF;
+	text-decoration: none;
+	cursor: pointer;
+}
+.modalDialog{
+	position: fixed;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.5);
+	z-index: 99999;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	pointer-events: none;
+}
+.modalDialog:target {
+	display: flex;
+	pointer-events: auto;
+}
+.register_container{
+	width: 300px;
+	height: 200px;
+	background-color: #fff;
+	border-radius: 20px;
+	color: #46353F;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+#register_name{
+	text-align: center;
+	font-weight: 300;
+	font-size: 40px;
+	line-height: 47px;
+}
+.register_buttons{
+	width: 80%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.register_buttons > div{
+	width: 100px;
+	height: 50px;
+	background-color: #46353F;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 30px;
+}
+.register_buttons > div > a{
+	font-weight: 300;
+	font-size: 30px;
+	line-height: 47px;
+}
+.register_teacher_container{
+	padding: 30px;
+	width: 300px;
+	height: 600px;
+	background-color: #fff;
+	border-radius: 20px;
+	color: #46353F;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+}
+.register_student_container{
+	padding: 30px;
+	width: 300px;
+	height: 600px;
+	background-color: #fff;
+	border-radius: 20px;
+	color: #46353F;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+}
+.login_container{
+	padding: 30px;
+	width: 300px;
+	height: 250px;
+	background-color: #fff;
+	border-radius: 20px;
+	color: #46353F;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+}
+input{
+	height: 40px;
+	width: 80%;
+	border-radius: 5px;
+	border: 2px solid #E1D6C3;
+	padding-left: 5px;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 20px;
+	text-align: left;
+	color: gray;
+}
+::placeholder{
+	padding-left: 5px;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 20px;
+	text-align: left;
+	color: gray;
+}
+#reg_button{
+	background-color: white;
+	transition: 0.5s;
+	text-align: center;
+	border-radius: 10px;
+	padding: 0;
+	line-height: 0;
+	cursor: pointer;
+}
+#reg_button:hover{
+	background-color: #E1D6C3;
+}
+.container{
+	margin: 50px;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 30px;
+	line-height: 10px;
+	color: #46353F;
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	padding-top: 100px;
+}
+.down-side{
+	background-color: rgba(0,0,0,.3);
+}
+img{
+	margin: 50px;
+	width: 60%;
+}
+.rate_list{
+	text-align: center;
+}
+p{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 30px;
+	line-height: 40px;
+	margin-right: 200px;
+	margin-left: 200px;
+}
+#about_us{
+	position: absolute;
+	margin-top: -100px;
+}
+#news{
+	position: absolute;
+	margin-top: -100px;
+}
