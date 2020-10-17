@@ -24,3 +24,5 @@ Route::post('/getRequests', [\App\Http\Controllers\Applicaton::class, 'getReques
 Route::post('/acceptRequest', [\App\Http\Controllers\Applicaton::class, 'acceptRequest'])->middleware('token');
 Route::post('/getStudents', [\App\Http\Controllers\Applicaton::class, 'getStudents'])->middleware('token');
 Route::post('/uploadCertificate', [\App\Http\Controllers\Certificate1::class, 'upload'])->middleware('token');
+Route::post('/getCertificates', [\App\Http\Controllers\Certificate1::class, 'getCertificates'])->middleware('token');
+Route::post('/getTeacherCertificates', [\App\Http\Controllers\Certificate1::class, 'getTeacherCertificates'])->middleware('token');
