@@ -41,16 +41,10 @@
 			    <input type="radio" name="list" value="not_changed" id="select">
 			    <label class="bg" for="bg"></label>
 			    <div class="items">
-			      <!-- <input type="radio" name="list" value="first_value" id="list[0]">
-			      <label for="list[0] ">Мария Ивановна</label>
-			      <input type="radio" name="list" value="second_value" id="list[1]">
-			      <label for="list[1]">Александр Степанович</label>
-			      <input type="radio" name="list" value="third_value" id="list[2]">
-			      <label for="list[2]">Анатолий Грибоедов</label> -->
 			      <span id="text"></span>
 			    </div>
 			</label>
-			<button class="settings_button" onclick="change_teacher()">Подтвердить</button>
+			<button class="settings_button" onclick="change_teacher()">Отправить запрос</button>
 		</div>
 	</div>
 	<div id="new_award" class="modalDialog">
@@ -64,15 +58,21 @@
 		<div class="rate_list">
 			<h2>Личный кабинет</h2>
 			<p id="which_error">Вы зарегистрированы как ученик</p>
+			<br>
 			<h2>Общее кол-во ваших баллов: 50</h2>
 			<br>
 			<h3>Данные профиля:</h3>
-			<p>Имя: </p>
-			<p>Фамилия: </p>
-			<p>Школа: </p>
-			<p>Почта: </p>
-			<p>Учитель: </p>
-			<p>Класс: </p>
+			<p id="name">Имя: </p>
+			<p id="surname">Фамилия: </p>
+			<p id="school">Школа: </p>
+			<p id="email">Почта: </p>
+			<p id="teacher">Учитель: </p>
+			<p id="form">Класс: </p>
+			<br>
+			<h3>Ваши достижения:</h3>
+			<p>1 место - Школьная олимпиада по программированию</p>
+			<p>3 место - Открытый республиканский хакатон</p>
+			<p>2 место - Junior Skills 2019</p>
 		</div>
 	</div>
 	<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
@@ -84,6 +84,7 @@
 			}
 		})
 	</script>
+	<script type="text/javascript" src="../js/take-data.js"></script>
 	<script type="text/javascript" src="../js/main.js"></script>
 </body>
 </html>

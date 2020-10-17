@@ -128,3 +128,7 @@
 #file{
   border: 2px solid #E5E5E5;
 }
+
+.rate_list > p{
+  line-height: 20px;
+}
