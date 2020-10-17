@@ -21,3 +21,5 @@ Route::post('/getUserData', [\App\Http\Controllers\User::class, 'getData'])->mid
 Route::post('/getTeachers', [\App\Http\Controllers\Applicaton::class, 'getTeachers'])->middleware('token');
 Route::post('/sendRequest', [\App\Http\Controllers\Applicaton::class, 'send'])->middleware('token');
 Route::post('/getRequests', [\App\Http\Controllers\Applicaton::class, 'getRequests'])->middleware('token');
+Route::post('/acceptRequest', [\App\Http\Controllers\Applicaton::class, 'acceptRequest'])->middleware('token');
+Route::post('/getStudents', [\App\Http\Controllers\Applicaton::class, 'getStudents'])->middleware('token');

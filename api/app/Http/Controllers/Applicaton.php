@@ -27,6 +27,24 @@ class Applicaton extends Controller
         }
     }
 
+    public function getStudents(Request $request) {
+        $token = $request->bearerToken();
+        $data = Teacher::query()->where(['token' => $token])->select('school_number')->get();
+        $students = Student::query()->where(['school_number' => $data[0]['school_number']]);
+        if ($students->count()) {
+            return response([
+                'data' => $students->get()
+            ], 200);
+        } else {
+            return response([
+                'error' => [
+                    'code' => 404,
+                    'message' => 'Not found',
+                ]
+            ], 404);
+        }
+    }
+
     public function send(Request $request) {
         $token = $request->bearerToken();
         $data = Student::query()->where(['token' => $token])->get();
@@ -60,4 +78,16 @@ class Applicaton extends Controller
             ], 404);
         }
     }
+
+    public function acceptRequest(Request $request) {
+        $id = $request->get('id');
+        $data = \App\Models\Request::query()->where(['id' => $id])->get();
+        $data = $data[0];
+        $studentId = $data['student_id'];
+        $teacherId = $data['teacher_id'];
+        Student::query()->where(['id' => $studentId])->update(['teacher_id' => $teacherId]);
+        \App\Models\Request::query()->where(['id' => $id])->delete();
+        response(null, 204);
+    }
+
 }
