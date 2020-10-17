@@ -121,10 +121,11 @@ function login_teacher(){
 			200: function(response){
 				location.href = "../"
 				localStorage.setItem("token", response.data.token);
-				location.href = "http://localhost/portfolio/personal/person.html";
+				location.href = "http://localhost/portfolio/personal/teacher.html";
 				$('.response').text('Вы зашли');
 				$('.response').css('display', 'flex');
 				$('.response').css('color', 'green');
+				localStorage.setItem('role', 'teacher');
 			},
 			401: function(response){
 				$('.response').text('Неверный Email или пароль');
@@ -137,6 +138,7 @@ function login_teacher(){
 	$.ajax(settings).done(function (response) {
 	  console.log(response);
 	});
+	
 }
 function login_student(){
 	var settings = {
@@ -157,6 +159,7 @@ function login_student(){
 				$('.response').text('Вы зашли');
 				$('.response').css('display', 'flex');
 				$('.response').css('color', 'green');
+				localStorage.setItem('role', 'student');
 			},
 			401: function(response){
 				$('.response').text('Неверный Email или пароль');
@@ -169,6 +172,7 @@ function login_student(){
 	$.ajax(settings).done(function (response) {
 	  console.log(response);
 	});
+	
 }
 
 function exit(){
@@ -191,6 +195,7 @@ function exit(){
 	});
 
 	localStorage.removeItem('token');
+	localStorage.removeItem('role');
 	location.href = "http://localhost/";
 }
 
@@ -205,8 +210,10 @@ function change_teacher(){
 	for(var i = 0;i<a.length;i++){
 		if($(a[i]).css('display')=='block'){
 			t_id = $(a[i]).attr('name');
+			break;
 		}
 	}
+	console.log($(a[i]).attr('name'));
 		var settings = {
 	  "url": "http://localhost/portfolio/api/public/api/sendRequest",
 	  "method": "POST",
@@ -215,7 +222,7 @@ function change_teacher(){
 	    "Authorization": "Bearer " + localStorage.getItem("token"),
 	    "Content-Type": "application/json"
 	  },
-	  "data": JSON.stringify({"teacher_id":t_id}),
+	  "data": JSON.stringify({"teacher_id": t_id}),
 	};
 	
 	$.ajax(settings).done(function (response) {
@@ -227,5 +234,13 @@ function add_award(){
 	location.href = "http://localhost/portfolio/personal/person.html";
 }
 function profile(){
-	location.href = "http://localhost/portfolio/personal/person.html";
+	if(localStorage.getItem("role")=='student'){
+		location.href = "http://localhost/portfolio/personal/person.html";
+	}
+	else{
+		location.href = "http://localhost/portfolio/personal/teacher.html";
+	}
+}
+function settings_teacher(){
+	location.href = "http://localhost/portfolio/personal/teacher.html#settings";
 }
