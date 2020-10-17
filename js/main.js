@@ -230,9 +230,6 @@ function change_teacher(){
 	});
 	location.href = "http://localhost/portfolio/personal/person.html";
 }
-function add_award(){
-	location.href = "http://localhost/portfolio/personal/person.html";
-}
 function profile(){
 	if(localStorage.getItem("role")=='student'){
 		location.href = "http://localhost/portfolio/personal/person.html";
