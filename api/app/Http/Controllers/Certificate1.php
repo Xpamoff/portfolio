@@ -23,6 +23,40 @@ class Certificate1 extends Controller
         $teacherId = $data[0]['teacher_id'];
 
 
+        $level = $request->get('level');
+        $score = 0;
+        $place = $request->get('place');
+        $modificator = 0;
+        switch($place) {
+            case 1: $modificator = 1;
+                break;
+            case 2: $modificator = 0.5;
+                break;
+            case 3: $modificator = 0.5;
+                break;
+            case 0: $modificator =  0;
+        }
+        switch($level) {
+            case 'Школьный': $score = 0;
+                break;
+            case 'Муниципальный': $score = 1 + $modificator;
+                break;
+            case 'Региональный': $score = 2 + $modificator*2;
+                break;
+            case 'Всероссийский': $score = 5 + $modificator*2;
+                break;
+            case 'Международный': switch($modificator) {
+                case 1: $score = 15;
+                    break;
+                case 0.5: $score = 10;
+                    break;
+                case 0: $score = 8;
+                    break;
+            };
+                break;
+        }
+
+
         Certificate::query()->insert([
            'event' => $request->get('event'),
             'level' => $request->get('level'),
@@ -31,7 +65,8 @@ class Certificate1 extends Controller
             'img' => $path,
             'teacher_id' => $teacherId,
             'student_first_name' => $firstName,
-            'student_last_name' => $lastName
+            'student_last_name' => $lastName,
+            'score' => $score
         ]);
 
         response(null, 204);
