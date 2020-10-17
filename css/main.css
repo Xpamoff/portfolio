@@ -225,6 +225,10 @@ img{
 	position: absolute;
 	margin-top: -100px;
 }
+#rating{
+	position: absolute;
+	margin-top: -100px;
+}
 #rotate_back{
 	text-align: center;
 	font-family: 'Yanone Kaffeesatz', sans-serif;
@@ -352,7 +356,7 @@ a{
 	font-style: normal;
 	font-weight: 100;
 	font-size: 50px;
-	line-height: 20px;
+	line-height: 40px;
 	color: white;
 	text-align: center;
 }
