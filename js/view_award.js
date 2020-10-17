@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	var score = 0;
 	var settings = {
 	  "url": "http://localhost/portfolio/api/public/api/getCertificates",
 	  "method": "POST",
@@ -8,7 +9,9 @@ $(document).ready(function() {
 	  },
 	  statusCode: {
 			 200: function(response){
+			 	$('.award_cont').empty();
 					for(var i = 0;i<response.data.length;i++){
+						score += response.data[i].score;
 						var one = $('<div class="award_cont"></div>');
 						var two = $('<div class="award_img"></div>');
 						var three = $('<img src="../api/storage/app/' + response.data[i].img + '">');
@@ -43,6 +46,8 @@ $(document).ready(function() {
 								// </div>
 							// </div>
 				}
+				localStorage.setItem('score', score);
+				$('.score_1').text('Общее кол-во ваших баллов: ' + score);
 			 },
 			 404: function(response){
 				
