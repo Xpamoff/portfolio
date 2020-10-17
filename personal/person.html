@@ -11,7 +11,7 @@
 <body id="Teleport">
 	<div class="header">
 		<div class="header_logo">
-			<a href="http://localhost/portfolio/personal/index.html#Teleport" class="logo">Teleport</a>
+			<a href="http://localhost/portfolio/personal/index.html#Teleport" class="logo"><img src="../assets/logo.jpg"></a>
 		</div>
 		<div class="header_buttons">
 			<a href="http://localhost/portfolio/personal/index.html#about_us">О нас</a>
@@ -48,10 +48,29 @@
 		</div>
 	</div>
 	<div id="new_award" class="modalDialog">
-		<div class="settings_back" class="modal_container" >
+		<div class="add_award_back" class="modal_container" >
+			<br>
 			<h2 class="h2-modal">Добавить грамоту:</h2>
-			<input type="file" name="new_award" id="file" required="">
+			<input type="file" name="new_award" id="file" required="" class="file_choose">
+			<br>
+			<select>
+				<option>Школьный уровень</option>
+				<option>Муниципальный уровень</option>
+				<option>Региональный уровень</option>
+				<option>Всероссийский уровень</option>
+				<option>Международный уровень</option>
+			</select>
+			<br>
+			<select>
+				<option>1 место</option>
+				<option>2 место</option>
+				<option>3 место</option>
+				<option>Участник</option>
+			</select>
+			<br>
+			<input type="text" name="" class="file_choose" placeholder="Название олимпиады">
 			<button class="settings_button" onclick="add_award()">Добавить</button>
+			<br>
 		</div>
 	</div>
 	<div class="container">
@@ -69,11 +88,22 @@
 			<p id="teacher">Учитель: </p>
 			<p id="form">Класс: </p>
 			<br>
-			<h3>Ваши достижения:</h3>
-			<p>1 место - Школьная олимпиада по программированию</p>
-			<p>3 место - Открытый республиканский хакатон</p>
-			<p>2 место - Junior Skills 2019</p>
+			
 		</div>
+	</div>
+	<div class="cont">
+		<h3>Мои грамоты:</h3>
+		<hr>
+		<div class="award_cont">
+			<div class="award_img">
+				<img src="../assets/news_1.jpg">
+			</div>
+			<div class="rate_list">
+				<h4>33046 место</h4>
+				<p>Олимпиада НТИ</p>
+			</div>
+		</div>
+		
 	</div>
 	<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript">
