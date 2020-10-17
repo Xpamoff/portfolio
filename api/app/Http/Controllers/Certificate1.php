@@ -52,7 +52,7 @@ class Certificate1 extends Controller
                     "level"=> $certificateData->level,
                     "place"=> $certificateData->place,
                     "student_id"=> $certificateData->student_id,
-                    "img"=> Storage::get($certificateData->img),
+                    "img"=> Storage::url($certificateData->img),
                     "teacher_id"=> $certificateData->teacher_id,
                     "student_first_name"=> $certificateData->student_first_name,
                     "student_last_name"=> $certificateData->student_last_name,
