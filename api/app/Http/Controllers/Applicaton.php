@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Student;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
+use App\Models\Certificate;
 
 class Applicaton extends Controller
 {
@@ -86,6 +87,7 @@ class Applicaton extends Controller
         $studentId = $data['student_id'];
         $teacherId = $data['teacher_id'];
         Student::query()->where(['id' => $studentId])->update(['teacher_id' => $teacherId]);
+        Certificate::query()->where(['student_id' => $studentId])->update(['teacher_id' => $teacherId]);
         \App\Models\Request::query()->where(['id' => $id])->delete();
         response(null, 204);
     }
