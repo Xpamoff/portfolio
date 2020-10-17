@@ -114,4 +114,45 @@ class Certificate1 extends Controller
             ], 404);
         }
     }
+
+    public function approveCertificate(Request $request){
+        $id = $request->get('id');
+        $certificate = Certificate::query()->where(['id' => $id])->get();
+        $certificate = $certificate[0];
+        $level = $certificate['level'];
+        $score = 0;
+        $place = $certificate['place'];
+        $id = $certificate['id'];
+        $modificator = 0;
+        switch($place) {
+            case 1: $modificator = 1;
+            break;
+            case 2: $modificator = 0.5;
+            break;
+            case 3: $modificator = 0.5;
+            break;
+            case 0: $modificator =  0;
+        }
+        switch($level) {
+            case 'Школьный': $score = 0;
+            break;
+            case 'Муниципальный': $score = 1 + $modificator;
+            break;
+            case 'Региональный': $score = 2 + $modificator*2;
+            break;
+            case 'Всероссийский': $score = 5 + $modificator*2;
+            break;
+            case 'Международный': switch($modificator) {
+                case 1: $score = 15;
+                break;
+                case 0.5: $score = 10;
+                break;
+                case 0: $score = 8;
+                break;
+            };
+            break;
+        }
+        Certificate::query()->where(['id' => $id])->update(['score' => $score]);
+        return response(null, 204);
+    }
 }
