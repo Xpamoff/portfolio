@@ -55,11 +55,11 @@
 			<input type="file" name="new_award" id="file" required="" class="file_choose">
 			<br>
 			<select onchange="award_level(this.value)">
-				<option>Школьный уровень</option>
-				<option>Муниципальный уровень</option>
-				<option>Региональный уровень</option>
-				<option>Всероссийский уровень</option>
-				<option>Международный уровень</option>
+				<option value="Школьный">Школьный уровень</option>
+				<option value="Муниципальный">Муниципальный уровень</option>
+				<option value="Региональный">Региональный уровень</option>
+				<option value="Всероссийский">Всероссийский уровень</option>
+				<option value="Международный">Международный уровень</option>
 			</select>
 			<br>
 			<select onchange="award_place(this.value)">
@@ -79,7 +79,7 @@
 			<h2>Личный кабинет</h2>
 			<p id="which_error">Вы зарегистрированы как ученик</p>
 			<br>
-			<h2>Общее кол-во ваших баллов: 50</h2>
+			<h2 class="score_1">Общее кол-во ваших баллов: 0</h2>
 			<br>
 			<h3>Данные профиля:</h3>
 			<p id="name">Имя: </p>
