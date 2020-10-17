@@ -61,7 +61,7 @@ class Certificate1 extends Controller
             }
             return response([
                 'data' => $responseArr
-            ], 403);
+            ], 200);
         }
         else {
             return response([
@@ -88,7 +88,6 @@ class Certificate1 extends Controller
             $data = $data->get();
             $responseArr = [];
             foreach($data as $certificateData) {
-//                var_dump($certificateData->id);
                 $responseArr[] = [
                     "id"=> $certificateData->id,
                     "event"=> $certificateData->event,
@@ -102,10 +101,9 @@ class Certificate1 extends Controller
                     "score"=> $certificateData->score
                 ];
             }
-            var_dump($responseArr);
-//            return response([
-//                'data' => ['1', $responseArr[0]]
-//            ], 403);
+            return response([
+                'data' => $responseArr
+            ], 200);
         }
         else {
             return response([
