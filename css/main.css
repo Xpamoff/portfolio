@@ -380,11 +380,33 @@ a{
 hr{
 	width: 80%;
 }
+.cont > .conta > .award_cont > .rate_list > p{
+	color: white;
+	line-height: 40px;
+}
+.cont > .conta > .award_cont > .rate_list > h4{
+	color: white;
+	text-align: center;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 40px;
+	line-height: 30px;
+}
 .cont > .award_cont > .rate_list > p{
 	color: white;
 	line-height: 40px;
 }
 .cont > .award_cont > .rate_list > h4{
+	color: white;
+	text-align: center;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 40px;
+	line-height: 30px;
+}
+.cont > .conta > h4{
 	color: white;
 	text-align: center;
 	font-family: 'Yanone Kaffeesatz', sans-serif;
