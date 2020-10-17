@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Student;
 use App\Models\Certificate;
+use App\Models\Teacher;
 
 class Certificate1 extends Controller
 {
@@ -52,7 +53,7 @@ class Certificate1 extends Controller
                     "level"=> $certificateData->level,
                     "place"=> $certificateData->place,
                     "student_id"=> $certificateData->student_id,
-                    "img"=> Storage::get($certificateData->img),
+                    "img"=> $certificateData->img,
                     "teacher_id"=> $certificateData->teacher_id,
                     "student_first_name"=> $certificateData->student_first_name,
                     "student_last_name"=> $certificateData->student_last_name,
@@ -75,29 +76,38 @@ class Certificate1 extends Controller
     }
 
     public function getTeacherCertificates(Request $request) {
-        $token = $request->bearerToken();
-        $data = Student::query()->where(['token' => $token])->get();
-        $studentId = $data[0]['id'];
-        $data = Certificate::query()->where(['student_id' => $studentId]);
+        $id = $request->get('id');
+        if($id == 0) {
+            $token = $request->bearerToken();
+            $data = Teacher::query()->where(['token' => $token])->get();
+            $id = $data[0]['id'];
+            $data = Certificate::query()->where(['teacher_id' => $id]);
+        }
+        else {
+            $data = Certificate::query()->where(['student_id' => $id]);
+        }
         if($data->count()) {
+            $data = $data->get();
             $responseArr = [];
             foreach($data as $certificateData) {
+//                var_dump($certificateData->id);
                 $responseArr[] = [
-                      "id"=> $certificateData->id,
-                      "event"=> $certificateData->event,
-                      "level"=> $certificateData->level,
-                      "place"=> $certificateData->place,
-                      "student_id"=> $certificateData->student_id,
-                      "img"=> Storage::get($certificateData->img),
-                      "teacher_id"=> $certificateData->teacher_id,
-                      "student_first_name"=> $certificateData->student_first_name,
-                      "student_last_name"=> $certificateData->student_last_name,
-                      "score"=> $certificateData->score
+                    "id"=> $certificateData->id,
+                    "event"=> $certificateData->event,
+                    "level"=> $certificateData->level,
+                    "place"=> $certificateData->place,
+                    "student_id"=> $certificateData->student_id,
+                    "img"=> $certificateData->img,
+                    "teacher_id"=> $certificateData->teacher_id,
+                    "student_first_name"=> $certificateData->student_first_name,
+                    "student_last_name"=> $certificateData->student_last_name,
+                    "score"=> $certificateData->score
                 ];
             }
-            return response([
-                'data' => $data->get()
-            ], 200);
+            var_dump($responseArr);
+//            return response([
+//                'data' => ['1', $responseArr[0]]
+//            ], 403);
         }
         else {
             return response([
