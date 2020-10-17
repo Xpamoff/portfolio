@@ -7,20 +7,20 @@ $(document).ready(function() {
 	    "Authorization": "Bearer " + localStorage.getItem("token")
 	  },
 	  statusCode: {
-			 200: function(response){
-					for(var i = 0;i<response.length;i++){
+			 403: function(response){
+					for(var i = 0;i<response.data.length;i++){
 						var one = $('<div class="award_cont">');
 						var two = $('<div class="award_img">');
-						var three = $('<img src="../api/storage/app/' + response[i]["img"] + '">');
+						var three = $('<img src="../api/storage/app/' + response[i].data["img"] + '">');
 						var four = $('</div>');
 						var five = $('<div class="rate_list">');
-						if(response[i]["place"] != 0){
-							var six = $('<h4>' + response[i]["place"] + ' место</h4>');
+						if(response[i].data["place"] != 0){
+							var six = $('<h4>' + response[i].data["place"] + ' место</h4>');
 						}
 						else{
 							var six = $('<h4>Участник</h4>');
 						}
-						var seven = $('<p>' + response[i]["event"] + '</p>');
+						var seven = $('<p>' + response[i].data["event"] + '</p>');
 						var eight = $('</div>');
 						var nine = $('</div>');
 						$('.cont').append(one);
