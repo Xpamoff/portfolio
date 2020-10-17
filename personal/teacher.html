@@ -63,13 +63,12 @@
 	</div>
 	<div class="cont">
 		<h3>Выбрать ученика:</h3>
-		<select>
-			<option>Данил Крамарь</option>
-			<option>Данил Крамарь</option>
-			<option>Данил Крамарь</option>
+		<select id="selector_students" onchange="change_page(this.value)">
+			<option>Все ученики</option>
 		</select>
 		<br>
 		<hr>
+		<div class="conta">
 		<div class="award_cont">
 			<div class="award_img">
 				<img src="../assets/news_1.jpg">
@@ -79,6 +78,7 @@
 				<p>Олимпиада НТИ</p>
 			</div>
 		</div>
+	</div>
 		
 	</div>
 	<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
@@ -93,5 +93,7 @@
 	<script type="text/javascript" src="../js/teach.js"></script>
 	<script type="text/javascript" src="../js/take-data.js"></script>
 	<script type="text/javascript" src="../js/main.js"></script>
+	<script type="text/javascript" src="../js/teacher_awards.js"></script>
+
 </body>
 </html>
